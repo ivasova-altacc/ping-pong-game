@@ -1,4 +1,5 @@
 from pygame import *
+from random import randint
 
 class GameSprite(sprite.Sprite):
    def __init__(self, player_image, player_x, player_y, player_speed, width, height):
@@ -66,7 +67,7 @@ while game:
 
         if sprite.collide_rect(racket1, ball) or sprite.collide_rect(racket2, ball):
             speed_x *= -1
-            speed_y *= -1
+            speed_y *= randint(1, 2)
 
         if ball.rect.y > win_height - 50 or ball.rect.y < 0:
             speed_y *= -1
